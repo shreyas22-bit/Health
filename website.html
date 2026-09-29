@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///C:/Users/SHREYAS%20R/Desktop/website/website.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health Awareness Website</title>
+
+    <style>
+
+        /* ---------- BASIC SETTINGS ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4fbfa;
+            color: #243434;
+            line-height: 1.6;
+        }
+
+
+        /* ---------- NAVIGATION ---------- */
+
+        nav {
+            background-color: #00695c;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffeb3b;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 22px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+
+        /* ---------- HERO SECTION ---------- */
+
+        .hero {
+            height: 90vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0, 105, 92, 0.75),
+                    rgba(38, 166, 154, 0.75)
+                ),
+
+                url("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 13px 28px;
+
+            background-color: #ffeb3b;
+            color: #164d48;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+
+        /* ---------- COMMON SECTION ---------- */
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 36px;
+            color: #00695c;
+        }
+
+        .title p {
+            color: #61706f;
+            margin-top: 8px;
+        }
+
+
+        /* ---------- INTRODUCTION ---------- */
+
+        .intro {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            align-items: center;
+        }
+
+        .intro img {
+            width: 100%;
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+        }
+
+        .intro h3 {
+            font-size: 30px;
+            color: #00695c;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* ---------- CARDS ---------- */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 22px;
+        }
+
+        .card {
+            background-color: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 7px 22px rgba(0, 0, 0, 0.10);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #00695c;
+            margin-bottom: 8px;
+        }
+
+
+        /* ---------- HEALTH FOOD ---------- */
+
+        .food-section {
+            background-color: #e0f2f1;
+        }
+
+
+        /* ---------- TIPS ---------- */
+
+        .tip {
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border-left: 5px solid #009688;
+        }
+
+        .tip h3 {
+            color: #00695c;
+        }
+
+
+        /* ---------- GALLERY ---------- */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 210px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        .contact {
+            background-color: #00695c;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 35px;
+        }
+
+        .contact-box {
+            max-width: 650px;
+
+            margin: 25px auto 0;
+
+            background-color: white;
+
+            color: #243434;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: left;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            margin-top: 8px;
+            margin-bottom: 15px;
+
+            border: 1px solid #ccd8d6;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+        }
+
+        button {
+            background-color: #00695c;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background-color: #073f3a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ---------- RESPONSIVE DESIGN ---------- */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            nav ul {
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Health<span>Care</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#home">Home</a>
+            </li>
+
+            <li>
+                <a href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#lifestyle">Lifestyle</a>
+            </li>
+
+            <li>
+                <a href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#food">Food</a>
+            </li>
+
+            <li>
+                <a href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#exercise">Exercise</a>
+            </li>
+
+            <li>
+                <a href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#sleep">Sleep</a>
+            </li>
+
+            <li>
+                <a href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#gallery">Gallery</a>
+            </li>
+
+            <li>
+                <a href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+
+        <div>
+
+            <h1>
+                Health Awareness
+            </h1>
+
+            <p>
+                Learn simple habits for a healthier,
+                happier and more active life.
+            </p>
+
+            <a class="btn" href="file:///C:/Users/SHREYAS%20R/Desktop/website/website.html#lifestyle">
+                Start Healthy Living
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HEALTHY LIFESTYLE ================= -->
+
+    <section id="lifestyle">
+
+        <div class="title">
+
+            <h2>
+                Healthy Lifestyle
+            </h2>
+
+            <p>
+                Small daily habits can support your overall well-being.
+            </p>
+
+        </div>
+
+
+        <div class="intro">
+
+            <img src="./website_files/photo-1498837167922-ddd27525d352" alt="Healthy food">
+
+
+            <div>
+
+                <h3>
+                    Take Care of Your Health
+                </h3>
+
+                <p>
+                    A healthy lifestyle includes balanced nutrition,
+                    regular physical activity, adequate sleep,
+                    good hygiene and managing stress.
+                </p>
+
+                <br>
+
+                <p>
+                    Make gradual changes that you can maintain
+                    consistently rather than trying to change
+                    everything at once.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HEALTHY FOOD ================= -->
+
+    <section id="food" class="food-section">
+
+        <div class="title">
+
+            <h2>
+                Healthy Food
+            </h2>
+
+            <p>
+                Choose a variety of nutritious foods.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <img src="./website_files/photo-1512621776951-a57141f2eefd" alt="Fruits and vegetables">
+
+                <div class="card-content">
+
+                    <h3>
+                        Fruits &amp; Vegetables
+                    </h3>
+
+                    <p>
+                        Include a variety of fruits and vegetables
+                        as part of a balanced diet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="./website_files/photo-1490645935967-10de6ba17061" alt="Healthy meal">
+
+                <div class="card-content">
+
+                    <h3>
+                        Balanced Meals
+                    </h3>
+
+                    <p>
+                        Combine whole grains, protein sources,
+                        vegetables and other nutrient-rich foods.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="./website_files/photo-1547592180-85f173990554" alt="Healthy snacks">
+
+                <div class="card-content">
+
+                    <h3>
+                        Healthy Snacks
+                    </h3>
+
+                    <p>
+                        Choose options such as fruit, nuts,
+                        yogurt or other nutritious snacks.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EXERCISE ================= -->
+
+    <section id="exercise">
+
+        <div class="title">
+
+            <h2>
+                Exercise &amp; Fitness
+            </h2>
+
+            <p>
+                Keep your body active throughout the week.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <img src="./website_files/photo-1517836357463-d25dfeac3438" alt="Strength training">
+
+                <div class="card-content">
+
+                    <h3>
+                        Strength Training
+                    </h3>
+
+                    <p>
+                        Strength exercises can help build
+                        and maintain muscles.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="./website_files/photo-1476480862126-209bfaa8edc8" alt="Running">
+
+                <div class="card-content">
+
+                    <h3>
+                        Walking &amp; Running
+                    </h3>
+
+                    <p>
+                        Walking, jogging and other aerobic
+                        activities can support cardiovascular fitness.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <img src="./website_files/photo-1544367567-0f2fcb009e0b" alt="Yoga">
+
+                <div class="card-content">
+
+                    <h3>
+                        Yoga &amp; Stretching
+                    </h3>
+
+                    <p>
+                        Stretching and yoga can support flexibility,
+                        balance and relaxation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SLEEP AND WATER ================= -->
+
+    <section id="sleep" class="food-section">
+
+        <div class="title">
+
+            <h2>
+                Sleep &amp; Water Tips
+            </h2>
+
+            <p>
+                Rest and hydration are important parts of healthy living.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="tip">
+
+                <h3>
+                    😴 Good Sleep
+                </h3>
+
+                <p>
+                    Maintain a regular sleep schedule and
+                    create a calm and comfortable sleeping environment.
+                </p>
+
+            </div>
+
+
+
+            <div class="tip">
+
+                <h3>
+                    💧 Stay Hydrated
+                </h3>
+
+                <p>
+                    Drink water regularly and pay attention
+                    to your body's hydration needs.
+                </p>
+
+            </div>
+
+
+
+            <div class="tip">
+
+                <h3>
+                    🧘 Manage Stress
+                </h3>
+
+                <p>
+                    Take breaks, stay connected with others
+                    and use healthy relaxation activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HEALTH AWARENESS ================= -->
+
+    <section>
+
+        <div class="title">
+
+            <h2>
+                Health Awareness Information
+            </h2>
+
+            <p>
+                Simple reminders for everyday health.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-content">
+
+                    <h3>
+                        Personal Hygiene
+                    </h3>
+
+                    <p>
+                        Regular handwashing, dental care
+                        and cleanliness help support good hygiene.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-content">
+
+                    <h3>
+                        Regular Check-ups
+                    </h3>
+
+                    <p>
+                        Routine health check-ups can help
+                        identify health concerns early.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-content">
+
+                    <h3>
+                        Mental Well-being
+                    </h3>
+
+                    <p>
+                        Talk to trusted people and seek
+                        professional support when needed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= IMAGE GALLERY ================= -->
+
+    <section id="gallery">
+
+        <div class="title">
+
+            <h2>
+                Health Gallery
+            </h2>
+
+            <p>
+                Healthy living in pictures.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img src="./website_files/photo-1498837167922-ddd27525d352(1)" alt="Healthy food">
+
+            <img src="./website_files/photo-1512621776951-a57141f2eefd(1)" alt="Vegetables">
+
+            <img src="./website_files/photo-1517836357463-d25dfeac3438(1)" alt="Exercise">
+
+            <img src="./website_files/photo-1544367567-0f2fcb009e0b(1)" alt="Yoga">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact">
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            Have a health-awareness question?
+            Send us a message.
+        </p>
+
+
+        <div class="contact-box">
+
+            <label>
+                Name
+            </label>
+
+            <input type="text" placeholder="Enter your name">
+
+
+            <label>
+                Email
+            </label>
+
+            <input type="email" placeholder="Enter your email">
+
+
+            <label>
+                Message
+            </label>
+
+            <textarea rows="5" placeholder="Enter your message"></textarea>
+
+
+            <button onclick="alert('Thank you! Your message has been submitted.')">
+                Submit
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>
+            Health Awareness
+        </h3>
+
+        <p>
+            Eat Well • Stay Active • Sleep Well • Stay Healthy
+        </p>
+
+        <p>
+            © 2026 Health Awareness Website
+        </p>
+
+    </footer>
+
+
+
+
+</body></html>
